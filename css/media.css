@@ -1,0 +1,514 @@
+@charset "utf-8";
+
+/* ========== 1400px 이하 (작은 데스크탑) ========== */
+@media (max-width: 1400px) {
+  .gnb {
+    gap: 80px;
+  }
+
+  nav {
+    margin-left: 80px;
+  }
+
+  .gnb > li > a {
+    font-size: 21px;
+  }
+
+  .gnb > li > ul li a {
+    font-size: 18px;
+  }
+}
+
+/* ========== 1200px 이하 (작은 노트북) ========== */
+@media (max-width: 1200px) {
+  .gnb {
+    gap: 60px;
+  }
+
+  nav {
+    margin-left: 60px;
+  }
+
+  .gnb > li > a {
+    font-size: 0.99vw;
+  }
+
+  .gnb > li > ul li a {
+    font-size: 17px;
+  }
+
+  .utils {
+    gap: 25px;
+  }
+
+  .utils .btn {
+    padding: 10px 30px;
+    font-size: 17px;
+  }
+
+  .dropdown .whale {
+    width: 250px;
+  }
+}
+
+/* ========== 1024px 이하 (태블릿 가로) ========== */
+@media (max-width: 1024px) {
+  header {
+    height: 80px;
+  }
+
+  .gnb > li > a {
+    height: 80px;
+    font-size: 17px;
+  }
+
+  .gnb {
+    gap: 40px;
+  }
+
+  nav {
+    margin-left: 40px;
+  }
+
+  .gnb > li > ul {
+    padding: 25px 15px;
+  }
+
+  .gnb > li > ul li {
+    margin-bottom: 22px;
+  }
+
+  .gnb > li > ul li a {
+    font-size: 16px;
+  }
+
+  .utils {
+    gap: 20px;
+  }
+
+  .utils .btn {
+    padding: 9px 25px;
+    font-size: 16px;
+  }
+
+  .utils .search {
+    width: 26px;
+    height: 26px;
+  }
+
+  .dropdown {
+    top: 85px;
+  }
+
+  .dropdown.active {
+    height: 250px;
+  }
+
+  .dropdown .inner {
+    padding: 50px 30px;
+  }
+
+  .dropdown .whale {
+    width: 200px;
+    top: -10px;
+  }
+
+  .search_box {
+    padding: 10px 20px;
+    width: 550px;
+  }
+
+  .search_box input {
+    padding: 10px 15px;
+    font-size: 18px;
+  }
+
+  .search_box button img {
+    width: 22px;
+    height: 22px;
+  }
+
+  .tags {
+    gap: 35px;
+  }
+
+  .tags a {
+    font-size: 19px;
+  }
+
+  .dropdown .close {
+    width: 24px;
+    height: 24px;
+    top: 30px;
+    right: 30px;
+  }
+
+  .visual {
+    padding-left: 80px;
+  }
+
+  .visual .txt {
+    padding: 0 60px 35px;
+  }
+
+  .visual .txt em {
+    font-size: 26px;
+  }
+
+  .visual .txt h2 {
+    font-size: 58px;
+  }
+
+  .visual .txt p {
+    font-size: 26px;
+  }
+
+  .visual .txt a {
+    font-size: 24px;
+  }
+
+  .visual .btns {
+    bottom: 35px;
+    left: 60px;
+    gap: 15px;
+  }
+
+  .visual .btns button {
+    font-size: 16px;
+  }
+}
+
+/* ========== 768px 이하 (태블릿 세로) ========== */
+@media (max-width: 768px) {
+  header {
+    height: 70px;
+  }
+
+  header .inner {
+    padding: 0 20px;
+  }
+
+  .gnb > li > a {
+    height: 70px;
+    font-size: 15px;
+  }
+
+  .gnb {
+    gap: 20px;
+  }
+
+  nav {
+    margin-left: 20px;
+  }
+
+  .gnb > li > ul {
+    padding: 20px 12px;
+    top: 70px;
+  }
+
+  .gnb > li > ul li {
+    margin-bottom: 18px;
+  }
+
+  .gnb > li > ul li a {
+    font-size: 15px;
+  }
+
+  .utils {
+    gap: 15px;
+  }
+
+  .utils .btn {
+    padding: 8px 20px;
+    font-size: 14px;
+  }
+
+  .utils .search {
+    width: 24px;
+    height: 24px;
+  }
+
+  .dropdown {
+    top: 75px;
+  }
+
+  .dropdown.active {
+    height: auto;
+    min-height: 220px;
+  }
+
+  .dropdown .inner {
+    padding: 40px 20px;
+  }
+
+  .dropdown .whale {
+    width: 150px;
+    left: 20px;
+  }
+
+  .search_con {
+    gap: 25px;
+    margin-top: -10px;
+  }
+
+  .search_box {
+    width: 90%;
+    padding: 8px 15px;
+  }
+
+  .search_box input {
+    padding: 8px 12px;
+    font-size: 16px;
+  }
+
+  .search_box button img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .tags {
+    gap: 25px;
+  }
+
+  .tags a {
+    font-size: 17px;
+  }
+
+  .dropdown .close {
+    width: 22px;
+    height: 22px;
+    top: 20px;
+    right: 20px;
+  }
+
+  .visual {
+    margin-top: 75px;
+    padding-left: 20px;
+  }
+
+  .visual .swiper {
+    border-radius: 15px 0 0 15px;
+  }
+
+  .visual .swiper-slide {
+    border-radius: 15px;
+  }
+
+  .visual .txt {
+    padding: 0 40px 25px;
+  }
+
+  .visual .txt em {
+    font-size: 20px;
+    margin-bottom: 12px;
+  }
+
+  .visual .txt h2 {
+    font-size: 42px;
+    margin-bottom: 50px;
+  }
+
+  .visual .txt p {
+    font-size: 20px;
+    margin-bottom: 35px;
+  }
+
+  .visual .txt a {
+    font-size: 20px;
+    gap: 6px;
+    margin-bottom: 50px;
+  }
+
+  .visual .txt a:hover {
+    gap: 10px;
+  }
+
+  .visual .txt a i {
+    font-size: 18px;
+  }
+
+  .visual .btns {
+    bottom: 25px;
+    left: 40px;
+    gap: 12px;
+  }
+
+  .visual .btns button {
+    font-size: 15px;
+  }
+
+  .visual .btns .toggle i {
+    font-size: 13px;
+  }
+
+  .visual .swiper-pagination {
+    font-size: 14px;
+  }
+}
+
+/* ========== 480px 이하 (모바일) ========== */
+@media (max-width: 480px) {
+  header {
+    height: 60px;
+  }
+
+  header .inner {
+    padding: 0 15px;
+  }
+
+  .gnb > li > a {
+    height: 60px;
+    font-size: 13px;
+  }
+
+  .gnb {
+    gap: 12px;
+  }
+
+  nav {
+    margin-left: 10px;
+  }
+
+  .gnb > li > ul {
+    padding: 15px 10px;
+    top: 60px;
+  }
+
+  .gnb > li > ul li {
+    margin-bottom: 15px;
+  }
+
+  .gnb > li > ul li a {
+    font-size: 13px;
+  }
+
+  .utils {
+    gap: 12px;
+  }
+
+  .utils .btn {
+    padding: 6px 15px;
+    font-size: 12px;
+    border-radius: 20px;
+  }
+
+  .utils .search {
+    width: 20px;
+    height: 20px;
+  }
+
+  .dropdown {
+    top: 65px;
+  }
+
+  .dropdown.active {
+    min-height: 200px;
+  }
+
+  .dropdown .inner {
+    padding: 30px 15px;
+  }
+
+  .dropdown .whale {
+    width: 120px;
+    left: 15px;
+  }
+
+  .search_con {
+    gap: 20px;
+  }
+
+  .search_box {
+    width: 95%;
+    padding: 6px 12px;
+  }
+
+  .search_box input {
+    padding: 6px 10px;
+    font-size: 14px;
+  }
+
+  .search_box button img {
+    width: 18px;
+    height: 18px;
+  }
+
+  .tags {
+    gap: 18px;
+  }
+
+  .tags a {
+    font-size: 15px;
+  }
+
+  .dropdown .close {
+    width: 20px;
+    height: 20px;
+    top: 15px;
+    right: 15px;
+  }
+
+  .visual {
+    margin-top: 65px;
+    padding-left: 0;
+  }
+
+  .visual .swiper {
+    border-radius: 0;
+  }
+
+  .visual .swiper-slide {
+    border-radius: 0;
+  }
+
+  .visual .txt {
+    padding: 0 25px 20px;
+  }
+
+  .visual .txt em {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .visual .txt h2 {
+    font-size: 32px;
+    margin-bottom: 35px;
+  }
+
+  .visual .txt p {
+    font-size: 16px;
+    margin-bottom: 25px;
+  }
+
+  .visual .txt a {
+    font-size: 16px;
+    gap: 5px;
+    margin-bottom: 35px;
+  }
+
+  .visual .txt a:hover {
+    gap: 8px;
+  }
+
+  .visual .txt a i {
+    font-size: 15px;
+  }
+
+  .visual .btns {
+    bottom: 20px;
+    left: 25px;
+    gap: 10px;
+  }
+
+  .visual .btns button {
+    font-size: 13px;
+  }
+
+  .visual .btns .toggle i {
+    font-size: 11px;
+  }
+
+  .visual .swiper-pagination {
+    font-size: 12px;
+  }
+}
