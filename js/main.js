@@ -154,42 +154,66 @@ document
     }
   });
 
-// ========== ANIMAL SWIPER ==========
-const animalThumbs = new Swiper(".animal_thumbs", {
-  direction: "vertical",
-  spaceBetween: 25,
-  slidesPerView: 3,
-  watchSlidesProgress: true,
-  loop: true, // 무한 루프
+/* ========== ANIMAL 슬라이드 ========== */
+let currentIndex = 0;
+const animals = [
+  { name: '벨루가', img: './asset/img/ani1.png' },
+  { name: '참물범', img: './asset/img/ani2.png' },
+  { name: '훔볼트 펭귄', img: './asset/img/ani3.png' },
+  { name: '바다거북', img: './asset/img/ani4.png' }
+];
+
+const mainCircles = document.querySelectorAll('.main_circle');
+const thumbsContainer = document.querySelector('.animal_thumbs');
+const prevBtn = document.querySelector('.animal_prev');
+const nextBtn = document.querySelector('.animal_next');
+
+// 썸네일 렌더링 (활성화된 것 제외 3개만)
+function renderThumbnails() {
+  thumbsContainer.innerHTML = '';
+  
+  animals.forEach((animal, index) => {
+    if (index !== currentIndex) {
+      const thumb = document.createElement('div');
+      thumb.className = 'thumb';
+      thumb.innerHTML = `<img src="${animal.img}" alt="${animal.name}" />`;
+      thumb.addEventListener('click', () => changeSlide(index));
+      thumbsContainer.appendChild(thumb);
+    }
+  });
+}
+
+// 슬라이드 변경
+function changeSlide(newIndex) {
+  // 현재 비디오 정지
+  const currentVideo = mainCircles[currentIndex].querySelector('.animal_vid');
+  currentVideo.pause();
+  
+  // 활성화 상태 변경
+  mainCircles[currentIndex].classList.remove('active');
+  currentIndex = newIndex;
+  mainCircles[currentIndex].classList.add('active');
+  
+  // 새 비디오 재생
+  const newVideo = mainCircles[currentIndex].querySelector('.animal_vid');
+  newVideo.play();
+  
+  // 썸네일 재렌더링
+  renderThumbnails();
+}
+
+// 이전 버튼
+prevBtn.addEventListener('click', () => {
+  const newIndex = (currentIndex - 1 + animals.length) % animals.length;
+  changeSlide(newIndex);
 });
 
-const animalSwiper = new Swiper(".animal_swiper", {
-  effect: "fade",
-  fadeEffect: {
-    crossFade: true,
-  },
-  loop: true, // 무한 루프
-  thumbs: {
-    swiper: animalThumbs,
-  },
-  navigation: {
-    prevEl: ".animal_prev",
-    nextEl: ".animal_next",
-  },
-  on: {
-    slideChange: function () {
-      // 모든 비디오 일시정지
-      document.querySelectorAll(".animal_vid").forEach((vid) => {
-        vid.pause();
-      });
-
-      // 현재 활성화된 슬라이드의 비디오만 재생
-      const activeSlide = this.slides[this.activeIndex];
-      const activeVideo = activeSlide.querySelector(".animal_vid");
-      if (activeVideo) {
-        activeVideo.currentTime = 0;
-        activeVideo.play();
-      }
-    },
-  },
+// 다음 버튼
+nextBtn.addEventListener('click', () => {
+  const newIndex = (currentIndex + 1) % animals.length;
+  changeSlide(newIndex);
 });
+
+// 초기화
+renderThumbnails();
+
