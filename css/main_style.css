@@ -1,0 +1,431 @@
+@charset "utf-8";
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");
+@import url("https://cdn.jsdelivr.net/gh/moonspam/NanumSquareNeo@1.0/nanumsquareneo.css");
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+    overflow-x: hidden;
+}
+
+:root {
+    --white: #FFFFFF;
+    --black: #2A2A2A;
+    --blue: #0080D0;
+    --navy: #00395C;
+    --font-num: 'NanumSquareNeoVariable', sans-serif;
+}
+
+.inner {
+    max-width: 1660px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+/* ========== HEADER ========== */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90px;
+    background: rgba(244, 253, 255, .5);
+    backdrop-filter: blur(15px);
+    transition: transform 0.3s;
+    z-index: 1000;
+}
+
+header.hide {
+    transform: translateY(-100%);
+}
+
+header .inner {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav {
+    margin-left: 128px;
+    flex: 1;
+}
+
+.gnb {
+    display: flex;
+    gap: 110px;
+    align-items: center;
+}
+
+.gnb > li {
+    position: relative;
+}
+
+.gnb > li > a {
+    height: 90px;
+    font-size: 1.15vw;
+    font-weight: 500;
+    color: var(--black);
+    display: flex;
+    align-items: center;
+    transition: color 0.3s;
+    position: relative;
+}
+
+.gnb > li > a::after {
+    content: '';
+    position: absolute;
+    bottom: 35%;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--blue);
+    transition: width 0.3s;
+}
+
+.gnb > li:hover > a {
+    color: var(--blue);
+}
+
+.gnb > li:hover > a::after {
+    width: 100%;
+}
+
+.gnb > li > ul {
+    position: absolute;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 30px 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+    z-index: 1001;
+}
+
+.gnb > li > ul li {
+    margin-bottom: 26px;
+}
+
+.gnb > li > ul li:last-child {
+    margin-bottom: 0;
+}
+
+.gnb > li > ul li a {
+    font-size: 19px;
+    color: #666;
+    transition: color 0.3s;
+    white-space: nowrap;
+  /*   padding: 5px 20px; */
+}
+
+.gnb > li > ul li a:hover {
+    color: var(--blue);
+}
+
+.utils {
+    display: flex;
+    align-items: center;
+    gap: 34px;
+    z-index: 1001;
+}
+
+.utils .btn {
+    background: transparent;
+    color: var(--navy);
+    padding: 11px 35px;
+    border: 1px solid var(--navy);
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.utils .btn:hover {
+    background: var(--blue);
+    color: var(--white);
+    border-color: var(--blue);
+}
+
+.utils .search {
+    width: 28px;
+    height: 28px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+.utils .search:hover {
+    opacity: 0.7;
+}
+
+.utils .search img {
+    width: 100%;
+}
+
+/* 드롭다운 */
+.dropdown {
+    position: fixed;
+    top: 95px;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: rgba(244, 253, 255, .95);
+    backdrop-filter: blur(15px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+    overflow: hidden;
+    z-index: 999;
+}
+
+.dropdown.active {
+    height: 280px;
+    opacity: 1;
+    visibility: visible;
+}
+
+.dropdown .inner {
+    padding: 80px 40px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropdown .whale {
+    position: absolute;
+    left: 40px;
+    top: -13px;
+    width: 300px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+}
+
+.dropdown.active .whale {
+    opacity: 1;
+    visibility: visible;
+}
+
+.dropdown .whale img {
+    width: 100%;
+}
+
+.gnb > li > ul.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* 검색 */
+.search_con {
+    display: none;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    margin-top: -20px;
+}
+
+.dropdown.search .search_con {
+    display: flex;
+}
+
+.search_box {
+    display: flex;
+    align-items: center;
+    border: 2px solid var(--black);
+    border-radius: 40px;
+    padding: 10px 25px;
+    width: 650px;
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.search_box input {
+    flex: 1;
+    border: none;
+    padding: 10px 20px;
+    font-size: 20px;
+    outline: none;
+    background: transparent;
+}
+
+.search_box input::placeholder {
+    color: #999;
+}
+
+.search_box button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.search_box button img {
+    width: 24px;
+}
+
+.tags {
+    display: flex;
+    gap: 55px;
+}
+
+.tags a {
+    color: var(--black);
+    font-size: 22px;
+    transition: all 0.3s;
+}
+
+.tags a:hover {
+    color: var(--blue);
+    font-weight: 500;
+}
+
+.dropdown .close {
+    position: absolute;
+    top: 35px;
+    right: 40px;
+    width: 25px;
+    height: 25px;
+    display: none;
+    border: none;
+    background: none;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+.dropdown.search .close {
+    display: block;
+}
+
+.dropdown .close:hover {
+    opacity: 0.7;
+}
+
+.dropdown .close img {
+    width: 100%;
+}
+
+/* ========== VISUAL ========== */
+.visual {
+    margin-top: 95px;
+    padding-left: 130px;
+}
+
+.visual .swiper {
+    position: relative;
+    border-radius: 20px 0 0 20px;
+    overflow: hidden;
+}
+
+.visual .swiper-slide {
+    width: 1660px;
+    height: 740px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+}
+
+.visual .txt {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 0 100px 40px;
+    color: var(--white);
+}
+
+.visual .txt em {
+    font-family: var(--font-num);
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.visual .txt h2 {
+    font-size: 70px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 76px;
+}
+
+.visual .txt p {
+    font-family: var(--font-num);
+    font-size: 30px;
+    line-height: 1.6;
+    margin-bottom: 50px;
+}
+
+.visual .txt a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 28px;
+    color: var(--white);
+    font-weight: 500;
+    transition: gap 0.3s;
+    margin-bottom: 94px;
+}
+
+.visual .txt a:hover {
+    gap: 12px;
+}
+
+.visual .txt a i {
+    font-size: 24px;
+}
+
+.visual .slide1 {
+    background-image: url('../asset/img/banner1.png');
+}
+
+.visual .slide2 {
+    background-image: url('../asset/img/banner2.png');
+}
+
+.visual .slide3 {
+    background-image: url('../asset/img/banner3.png');
+}
+
+.visual .slide4 {
+    background-image: url('../asset/img/banner4.png');
+}
+
+/* 컨트롤 */
+.visual .btns {
+    position: absolute;
+    bottom: 40px;
+    left: 100px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    z-index: 10;
+}
+
+.visual .btns button {
+    background: none;
+    border: none;
+    color: var(--white);
+    cursor: pointer;
+    font-size: 18px;
+    transition: opacity 0.3s;
+}
+
+.visual .btns button:hover {
+    opacity: 0.7;
+}
+
+.visual .btns .toggle i {
+    font-size: 14px;
+}
+
+.visual .swiper-pagination {
+    position: static;
+    color: var(--white);
+    font-size: 15px;
+    font-weight: 500;
+}
