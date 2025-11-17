@@ -157,27 +157,27 @@ document
 /* ========== ANIMAL 슬라이드 ========== */
 let currentIndex = 0;
 const animals = [
-  { name: '벨루가', img: './asset/img/ani1.png' },
-  { name: '참물범', img: './asset/img/ani2.png' },
-  { name: '훔볼트 펭귄', img: './asset/img/ani3.png' },
-  { name: '바다거북', img: './asset/img/ani4.png' }
+  { name: "벨루가", img: "./asset/img/ani1.png" },
+  { name: "참물범", img: "./asset/img/ani2.png" },
+  { name: "훔볼트 펭귄", img: "./asset/img/ani3.png" },
+  { name: "바다거북", img: "./asset/img/ani4.png" },
 ];
 
-const mainCircles = document.querySelectorAll('.main_circle');
-const thumbsContainer = document.querySelector('.animal_thumbs');
-const prevBtn = document.querySelector('.animal_prev');
-const nextBtn = document.querySelector('.animal_next');
+const mainCircles = document.querySelectorAll(".main_circle");
+const thumbsContainer = document.querySelector(".animal_thumbs");
+const prevBtn = document.querySelector(".animal_prev");
+const nextBtn = document.querySelector(".animal_next");
 
 // 썸네일 렌더링 (활성화된 것 제외 3개만)
 function renderThumbnails() {
-  thumbsContainer.innerHTML = '';
-  
+  thumbsContainer.innerHTML = "";
+
   animals.forEach((animal, index) => {
     if (index !== currentIndex) {
-      const thumb = document.createElement('div');
-      thumb.className = 'thumb';
+      const thumb = document.createElement("div");
+      thumb.className = "thumb";
       thumb.innerHTML = `<img src="${animal.img}" alt="${animal.name}" />`;
-      thumb.addEventListener('click', () => changeSlide(index));
+      thumb.addEventListener("click", () => changeSlide(index));
       thumbsContainer.appendChild(thumb);
     }
   });
@@ -186,30 +186,30 @@ function renderThumbnails() {
 // 슬라이드 변경
 function changeSlide(newIndex) {
   // 현재 비디오 정지
-  const currentVideo = mainCircles[currentIndex].querySelector('.animal_vid');
+  const currentVideo = mainCircles[currentIndex].querySelector(".animal_vid");
   currentVideo.pause();
-  
+
   // 활성화 상태 변경
-  mainCircles[currentIndex].classList.remove('active');
+  mainCircles[currentIndex].classList.remove("active");
   currentIndex = newIndex;
-  mainCircles[currentIndex].classList.add('active');
-  
+  mainCircles[currentIndex].classList.add("active");
+
   // 새 비디오 재생
-  const newVideo = mainCircles[currentIndex].querySelector('.animal_vid');
+  const newVideo = mainCircles[currentIndex].querySelector(".animal_vid");
   newVideo.play();
-  
+
   // 썸네일 재렌더링
   renderThumbnails();
 }
 
 // 이전 버튼
-prevBtn.addEventListener('click', () => {
+prevBtn.addEventListener("click", () => {
   const newIndex = (currentIndex - 1 + animals.length) % animals.length;
   changeSlide(newIndex);
 });
 
 // 다음 버튼
-nextBtn.addEventListener('click', () => {
+nextBtn.addEventListener("click", () => {
   const newIndex = (currentIndex + 1) % animals.length;
   changeSlide(newIndex);
 });
@@ -217,3 +217,37 @@ nextBtn.addEventListener('click', () => {
 // 초기화
 renderThumbnails();
 
+// Event Swiper - 10개 슬라이드로 완벽한 무한 루프
+const eventSwiper = new Swiper(".event_swiper", {
+  slidesPerView: "auto",
+  spaceBetween: 30,
+  centeredSlides: true,
+  loop: true, // loop 켜기
+  loopedSlides: 10, // 슬라이드 총 개수 명시
+  speed: 1200,
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false,
+  },
+  grabCursor: true,
+  slideToClickedSlide: true,
+  allowTouchMove: true,
+  navigation: {
+    nextEl: ".event_next",
+    prevEl: ".event_prev",
+  },
+  effect: "slide",
+  watchSlidesProgress: true, // 슬라이드 진행 상태 추적
+});
+
+// 호버 시 자동재생 일시정지
+const eventCards = document.querySelectorAll(".event_card");
+eventCards.forEach((card) => {
+  card.addEventListener("mouseenter", () => {
+    eventSwiper.autoplay.stop();
+  });
+
+  card.addEventListener("mouseleave", () => {
+    eventSwiper.autoplay.start();
+  });
+});
