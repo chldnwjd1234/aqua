@@ -221,33 +221,43 @@ renderThumbnails();
 const eventSwiper = new Swiper(".event_swiper", {
   slidesPerView: "auto",
   spaceBetween: 30,
-  centeredSlides: true,
   loop: true, // loop 켜기
-  loopedSlides: 10, // 슬라이드 총 개수 명시
-  speed: 1000,
+  effect: "coverflow",
+  grabCursor: true,
+  centeredSlides: true,
+  coverflowEffect: {
+    rotate: 0,
+    stretch: 1,
+    depth: 0,
+    modifier: 1,
+    slideShadows: false,
+    scale: 0.88,
+  },
+
+
+  speed: 2000,
   autoplay: {
-    delay: 1500,
+    delay: 100,
     disableOnInteraction: false,
   },
-  grabCursor: true,
+
   slideToClickedSlide: true,
   allowTouchMove: true,
   navigation: {
     nextEl: ".event_next",
     prevEl: ".event_prev",
   },
-  effect: "slide",
   watchSlidesProgress: true, // 슬라이드 진행 상태 추적
 });
 
 // 호버 시 자동재생 일시정지
-const eventCards = document.querySelectorAll(".event_card");
-eventCards.forEach((card) => {
-  card.addEventListener("mouseenter", () => {
-    eventSwiper.autoplay.stop();
-  });
+const eventCards = document.querySelectorAll(".event_swiper");
 
-  card.addEventListener("mouseleave", () => {
-    eventSwiper.autoplay.start();
-  });
+eventCards.addEventListener("mouseenter", () => {
+  eventSwiper.autoplay.stop();
 });
+
+eventCards.addEventListener("mouseleave", () => {
+  eventSwiper.autoplay.start();
+});
+

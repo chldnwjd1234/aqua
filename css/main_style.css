@@ -71,11 +71,11 @@ nav {
   align-items: center;
 }
 
-.gnb > li {
+.gnb>li {
   position: relative;
 }
 
-.gnb > li > a {
+.gnb>li>a {
   height: 95px;
   font-size: 23px;
   font-weight: 500;
@@ -86,7 +86,7 @@ nav {
   position: relative;
 }
 
-.gnb > li > a::after {
+.gnb>li>a::after {
   content: "";
   position: absolute;
   bottom: 30%;
@@ -97,15 +97,15 @@ nav {
   transition: width 0.3s;
 }
 
-.gnb > li:hover > a {
+.gnb>li:hover>a {
   color: var(--blue);
 }
 
-.gnb > li:hover > a::after {
+.gnb>li:hover>a::after {
   width: 100%;
 }
 
-.gnb > li > ul {
+.gnb>li>ul {
   position: absolute;
   top: 80px;
   left: 0;
@@ -116,22 +116,22 @@ nav {
   z-index: 1001;
 }
 
-.gnb > li > ul li {
+.gnb>li>ul li {
   margin-bottom: 26px;
 }
 
-.gnb > li > ul li:last-child {
+.gnb>li>ul li:last-child {
   margin-bottom: 0;
 }
 
-.gnb > li > ul li a {
+.gnb>li>ul li a {
   font-size: 19px;
   color: #666;
   transition: color 0.3s;
   white-space: nowrap;
 }
 
-.gnb > li > ul li a:hover {
+.gnb>li>ul li a:hover {
   color: var(--blue);
 }
 
@@ -248,7 +248,7 @@ nav {
   width: 100%;
 }
 
-.gnb > li > ul.visible {
+.gnb>li>ul.visible {
   opacity: 1;
   visibility: visible;
 }
@@ -776,7 +776,7 @@ nav {
 
 /* Event Section */
 .event {
-  padding: 120px 130px;
+  padding: 120px 0 0 130px;
   background: linear-gradient(180deg, #f4fef7 -10.96%, #fff 104%);
   overflow: hidden;
 }
@@ -821,25 +821,27 @@ nav {
 
 /* Swiper */
 .event_swiper {
-  overflow: visible;
+  /* overflow: visible; */
   padding: 20px 0;
 }
 
 .event_swiper .swiper-wrapper {
   align-items: center;
+
 }
 
 .event_swiper .swiper-slide {
   width: 360px;
-  transition: all 0.5s ease;
-  transform: scale(0.88);
-  /* opacity: 0.55; */
+  opacity: 0.55;
+  /* transform: scale(0.88); */
+  transition: all 0.3s ease;
+  /* transform-origin: left center; */
 }
 
 .event_swiper .swiper-slide-active {
-  transform: scale(1);
   opacity: 1;
-  z-index: 2;
+  /* transform: scale(1); */
+  /* z-index: 2; */
 }
 
 .event_card {
@@ -866,6 +868,17 @@ nav {
   justify-content: center;
   padding: 40px;
 }
+
+.pingu .card_img {
+  background-image: url(../asset/img/card_4-2.svg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: bottom center;
+  align-items: flex-end;
+  padding-bottom: 20px;
+}
+
+
 
 .card_info {
   padding: 30px;
