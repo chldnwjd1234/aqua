@@ -224,9 +224,9 @@ const eventSwiper = new Swiper(".event_swiper", {
   centeredSlides: true,
   loop: true, // loop 켜기
   loopedSlides: 10, // 슬라이드 총 개수 명시
-  speed: 1200,
+  speed: 1000,
   autoplay: {
-    delay: 3000,
+    delay: 1500,
     disableOnInteraction: false,
   },
   grabCursor: true,
