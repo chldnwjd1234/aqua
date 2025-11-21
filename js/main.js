@@ -239,3 +239,19 @@ const eventSwiper = new Swiper(".event_swiper", {
   },
   watchSlidesProgress: true,
 });
+
+/* ========== Top Button ========== */
+const topBtn = document.querySelector('.top_btn');
+
+window.addEventListener('scroll', () => {
+  if (window.pageYOffset > 300) {
+    topBtn.classList.add('show');
+  } else {
+    topBtn.classList.remove('show');
+  }
+});
+
+topBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});

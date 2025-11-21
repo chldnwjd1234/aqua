@@ -1363,3 +1363,35 @@ nav {
 .footer_family i {
   font-size: 16px;
 }
+
+/* Top Button */
+.top_btn {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  width: 70px;
+  height: 70px;
+  background: #fff;
+  border-radius: 50%;
+  color: var(--blue);
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.top_btn.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.top_btn:hover {
+  background: var(--blue);
+  color: #fff;
+  transform: translateY(-5px);
+}
