@@ -85,16 +85,10 @@ document.addEventListener("click", (e) => {
 // 태그 클릭 시 검색창에 텍스트 입력
 document.querySelectorAll(".tags a").forEach((tag) => {
   tag.addEventListener("click", function (e) {
-    e.preventDefault(); // 링크 기본 동작 막기
-
-    // # 제거하고 텍스트만 가져오기
+    e.preventDefault();
     const tagText = this.textContent.replace("#", "").trim();
-
-    // 검색창 input에 텍스트 넣기
     const searchInput = document.querySelector(".search_box input");
     searchInput.value = tagText;
-
-    // 검색창에 포커스 (선택사항)
     searchInput.focus();
   });
 });
@@ -185,20 +179,16 @@ function renderThumbnails() {
 
 // 슬라이드 변경
 function changeSlide(newIndex) {
-  // 현재 비디오 정지
   const currentVideo = mainCircles[currentIndex].querySelector(".animal_vid");
   currentVideo.pause();
 
-  // 활성화 상태 변경
   mainCircles[currentIndex].classList.remove("active");
   currentIndex = newIndex;
   mainCircles[currentIndex].classList.add("active");
 
-  // 새 비디오 재생
   const newVideo = mainCircles[currentIndex].querySelector(".animal_vid");
   newVideo.play();
 
-  // 썸네일 재렌더링
   renderThumbnails();
 }
 
@@ -217,11 +207,11 @@ nextBtn.addEventListener("click", () => {
 // 초기화
 renderThumbnails();
 
-// Event Swiper - 10개 슬라이드로 완벽한 무한 루프
+/* ========== Event Swiper ========== */
 const eventSwiper = new Swiper(".event_swiper", {
   slidesPerView: "auto",
   spaceBetween: 30,
-  loop: true, // loop 켜기
+  loop: true,
   effect: "coverflow",
   grabCursor: true,
   centeredSlides: true,
@@ -233,31 +223,19 @@ const eventSwiper = new Swiper(".event_swiper", {
     slideShadows: false,
     scale: 0.88,
   },
-
-
-  speed: 2000,
+  speed: 3800, // 한 슬라이드 이동 시간
   autoplay: {
-    delay: 100,
+    delay: 0,
     disableOnInteraction: false,
+    pauseOnMouseEnter: true,
   },
-
+  freeMode: true,
+  freeModeMomentum: false,
   slideToClickedSlide: true,
   allowTouchMove: true,
   navigation: {
     nextEl: ".event_next",
     prevEl: ".event_prev",
   },
-  watchSlidesProgress: true, // 슬라이드 진행 상태 추적
+  watchSlidesProgress: true,
 });
-
-// 호버 시 자동재생 일시정지
-const eventCards = document.querySelectorAll(".event_swiper");
-
-eventCards.addEventListener("mouseenter", () => {
-  eventSwiper.autoplay.stop();
-});
-
-eventCards.addEventListener("mouseleave", () => {
-  eventSwiper.autoplay.start();
-});
-
