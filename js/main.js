@@ -10,14 +10,22 @@ const btnClose = document.querySelector(".dropdown .close");
 /* ========== 햄버거 메뉴 ========== */
 const ham = document.querySelector(".ham");
 const mobileOverlay = document.querySelector(".mobile_overlay");
+const mobileMenu = document.querySelector(".mobile_menu");
+const mobileClose = document.querySelector(".mobile_close");
 
 // 햄버거 클릭
 if (ham) {
   ham.addEventListener("click", () => {
-    header.classList.toggle("on");
-    document.body.style.overflow = header.classList.contains("on")
-      ? "hidden"
-      : "";
+    header.classList.add("on");
+    document.body.style.overflow = "hidden";
+  });
+}
+
+// X 버튼 클릭
+if (mobileClose) {
+  mobileClose.addEventListener("click", () => {
+    header.classList.remove("on");
+    document.body.style.overflow = "";
   });
 }
 
@@ -29,15 +37,11 @@ if (mobileOverlay) {
   });
 }
 
-// 모바일 서브메뉴 토글
-const gnbItems = document.querySelectorAll(".gnb > li");
-gnbItems.forEach((item) => {
-  const link = item.querySelector("a");
-  link.addEventListener("click", (e) => {
-    if (window.innerWidth <= 1400) {
-      e.preventDefault();
-      item.classList.toggle("active");
-    }
+// 모바일 서브메뉴 토글 - li 전체 클릭
+const mobileGnbItems = document.querySelectorAll(".mobile_gnb > li.has_sub");
+mobileGnbItems.forEach((item) => {
+  item.addEventListener("click", () => {
+    item.classList.toggle("open");
   });
 });
 
@@ -46,7 +50,7 @@ window.addEventListener("resize", () => {
   if (window.innerWidth > 1400) {
     header.classList.remove("on");
     document.body.style.overflow = "";
-    gnbItems.forEach((item) => item.classList.remove("active"));
+    mobileGnbItems.forEach((item) => item.classList.remove("open"));
   }
 });
 
