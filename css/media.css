@@ -129,7 +129,6 @@
     background: url(../asset/img/gnb.svg) no-repeat right bottom;
     background-size: contain;
     opacity: 0.25;
-    pointer-events: none;
     z-index: 0;
   }
 
@@ -215,7 +214,7 @@
 
   .mobile_gnb > li {
     border-bottom: 1px solid #e5e5e5;
-    position: relative;
+    position: relative; /* 유지 */
     cursor: pointer;
   }
 
@@ -226,30 +225,36 @@
     font-weight: 600;
     color: var(--navy);
     pointer-events: none;
+    position: relative; /* 추가 - 이게 기준점이 됨 */
   }
 
-  /* 토글 버튼 - 메인 메뉴 영역 높이에만 고정 */
   .toggle_btn {
     position: absolute;
     right: 40px;
-    top: 28px;
+    top: 15px;
     width: 40px;
     height: 40px;
     background: none;
     border: none;
-    font-size: 36px;
+    font-size: 34px;
     font-weight: 300;
     color: var(--navy);
-    pointer-events: none;
+    cursor: pointer;
     line-height: 1;
+    z-index: 10;
   }
 
   .toggle_btn::after {
-    content: "+";
+    content: "\f107"; /* Font Awesome 아래 화살표 */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    color: var(--navy);
+    transition: transform 0.3s;
+    display: block;
   }
 
   .mobile_gnb > li.open .toggle_btn::after {
-    content: "−";
+    transform: rotate(180deg); /* 180도 회전 */
   }
 
   /* 서브메뉴 */
@@ -348,7 +353,7 @@
 
   .toggle_btn {
     right: 30px;
-    font-size: 32px;
+    font-size: 28px;
   }
 
   .mobile_sub li a {
@@ -1019,7 +1024,7 @@
 
   .mobile_menu {
     width: 65%;
-    max-width: 400px;
+    max-width: none;
     min-width: 280px;
   }
 
@@ -1044,7 +1049,7 @@
 
   .toggle_btn {
     right: 25px;
-    font-size: 30px;
+    font-size: 26px;
   }
 
   .mobile_sub li a {
@@ -1071,23 +1076,464 @@
   }
 }
 
-/* ========== 480px 이하 ========== */
-@media (max-width: 480px) {
+/* ========== 430px 이하 - 모바일 최적화 ========== */
+@media (max-width: 430px) {
+  /* inner 패딩 조정 */
+  .inner {
+    padding: 0 15px;
+  }
+
+  /* 헤더 */
+  header {
+    height: 60px;
+  }
+
+  header .inner {
+    padding: 0 15px;
+  }
+
+  header h1 img {
+    width: 120px;
+  }
+
+  /* 모바일 메뉴 */
+  .mobile_menu {
+    width: 85%;
+    min-width: 280px;
+  }
+
+  /* 고래 배경 이미지 */
+  .mobile_menu::before {
+    width: min(90vw, 350px);
+    height: min(90vw, 350px);
+    right: -5%;
+  }
+
+  .mobile_header {
+    padding: 10px 15px;
+  }
+
+  .mobile_title {
+    font-size: 18px;
+    padding: 18px 15px;
+  }
+
+  .mobile_gnb > li > a {
+    font-size: 20px;
+    padding: 22px 20px;
+  }
+
+  .toggle_btn {
+    right: 20px;
+    font-size: 23px;
+  }
+
+  .mobile_sub li a {
+    font-size: 16px;
+    padding: 12px 20px 12px 40px;
+  }
+
+  /* 비주얼 */
+  .visual {
+    padding: 60px 0 0 0;
+  }
+
   .visual .swiper-slide {
-    height: 320px;
+    height: 280px;
+  }
+
+  .visual .txt {
+    padding: 30px 15px;
+  }
+
+  .visual .txt em {
+    font-size: 12px;
+    margin-bottom: 8px;
   }
 
   .visual .txt h2 {
-    font-size: 24px;
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+
+  .visual .txt p {
+    font-size: 14px;
+    margin-bottom: 20px;
+    line-height: 1.4;
+  }
+
+  .visual .txt a {
+    font-size: 16px;
+  }
+
+  .visual .btns {
+    left: 15px;
+    bottom: 15px;
+  }
+
+  /* Time */
+  .time {
+    padding: 40px 0;
+  }
+
+  .time .inner {
+    gap: 30px;
+  }
+
+  .time_info h2 {
+    font-size: 20px;
+  }
+
+  .time_info .hours {
+    font-size: 18px;
+  }
+
+  .service_icons {
+    gap: 4px;
+    justify-content: space-between;
   }
 
   .service_icons .icon {
+    width: 65px;
+    height: 65px;
+    gap: 7px;
+  }
+
+  .service_icons .icon img {
+    width: 28px;
+    height: 28px;
+  }
+
+  .service_icons .icon span {
+    font-size: 11px;
+  }
+
+  /* Animal */
+  .animal {
+    padding: 40px 15px;
+  }
+
+  .animal .inner {
+    padding: 0;
+  }
+
+  .animal .title_txt p {
+    font-size: 16px;
+  }
+
+  .animal .title_txt h2 {
+    margin-bottom: 25px;
+  }
+
+  .animal .title_txt .title_big {
+    font-size: 26px;
+  }
+
+  .animal .title_txt .title_small {
+    font-size: 22px;
+  }
+
+  .animal .title_txt .title_blue {
+    font-size: 22px;
+  }
+
+  .animal_slide {
+    padding: 30px 0;
+  }
+
+  .animal_slide .main_circle {
+    width: 260px;
+    height: 260px;
+    top: 30px;
+  }
+
+  .animal_slide .animal_name {
+    font-size: 22px;
+    bottom: 30px;
+  }
+
+  .animal_slide .animal_prev,
+  .animal_slide .animal_next {
+    width: 45px;
+    height: 45px;
+    font-size: 28px;
+    top: 180px;
+  }
+
+  .animal_slide .animal_prev {
+    left: 5px;
+  }
+
+  .animal_slide .animal_next {
+    right: 5px;
+  }
+
+  .animal_slide::before {
+    height: 380px;
+  }
+
+  .animal_slide .animal_thumbs {
+    gap: 15px;
+  }
+
+  .animal_slide .animal_thumbs .thumb {
     width: 75px;
     height: 75px;
   }
 
-  .main_circle {
-    width: 240px;
-    height: 240px;
+  .animal .inner::after {
+    margin: 30px auto 0;
+    padding: 12px 25px;
+    font-size: 14px;
+  }
+
+  /* Event */
+  .event {
+    padding: 40px 15px;
+  }
+
+  .event .inner {
+    padding: 0;
+  }
+
+  .event_header .title_txt p {
+    font-size: 16px;
+  }
+
+  .event_header .title_txt .title_big {
+    font-size: 26px;
+  }
+
+  .event_header .title_txt .title_small {
+    font-size: 22px;
+  }
+
+  .event_header .title_txt .title_blue {
+    font-size: 22px;
+  }
+
+  .event_swiper .swiper-slide {
+    width: 260px;
+  }
+
+  .event_card .card_img {
+    height: 200px;
+    padding: 25px;
+  }
+
+  .card_info {
+    padding: 18px;
+  }
+
+  .card_date {
+    font-size: 13px;
+  }
+
+  .card_title {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .card_price {
+    font-size: 18px;
+  }
+
+  /* Program */
+  .prog {
+    padding: 40px 15px;
+  }
+
+  .prog .inner {
+    padding: 0;
+  }
+
+  .prog_content {
+    gap: 40px;
+  }
+
+  .prog .title_txt p {
+    font-size: 16px;
+  }
+
+  .prog .title_txt .title_big {
+    font-size: 26px;
+  }
+
+  .prog .title_txt .title_small {
+    font-size: 22px;
+  }
+
+  .prog_marquee {
+    flex-direction: column;
+    max-height: none;
+    gap: 15px;
+  }
+
+  .marquee_col {
+    width: 100%;
+    max-width: 345px;
+  }
+
+  .prog_card .card_content {
+    padding: 18px 14px;
+  }
+
+  .prog_card .card_text h3 {
+    font-size: 15px;
+    margin-bottom: 12px;
+  }
+
+  .prog_card .card_text p {
+    font-size: 12px;
+  }
+
+  .prog_card img {
+    padding: 15px 20px 20px 20px;
+  }
+
+  .prog::after {
+    margin: 50px auto 0;
+    padding: 12px 25px;
+    font-size: 14px;
+  }
+
+  /* Instagram */
+  .insta_banner {
+    height: 220px;
+  }
+
+  .insta_content {
+    left: 15px;
+  }
+
+  .insta_content h2 {
+    font-size: 18px;
+    margin-bottom: 6px;
+  }
+
+  .insta_content p {
+    font-size: 14px;
+  }
+
+  /* News */
+  .news {
+    padding: 50px 15px;
+  }
+
+  .news .inner {
+    padding: 0;
+  }
+
+  .news .title_txt {
+    margin-bottom: 35px;
+  }
+
+  .news .title_txt p {
+    font-size: 16px;
+  }
+
+  .news .title_txt .title_big {
+    font-size: 26px;
+  }
+
+  .news .title_txt .title_small {
+    font-size: 22px;
+  }
+
+  .news_item {
+    padding: 22px 15px;
+    gap: 12px;
+  }
+
+  .news_info {
+    gap: 10px;
+  }
+
+  .news_tag {
+    font-size: 13px;
+    padding: 5px 12px;
+  }
+
+  .news_title {
+    font-size: 17px;
+  }
+
+  .news_date {
+    font-size: 14px;
+  }
+
+  .news .inner::after {
+    margin: 40px auto 0;
+    padding: 12px 25px;
+    font-size: 14px;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 40px 15px;
+  }
+
+  .footer .inner {
+    padding: 0;
+  }
+
+  .footer_top {
+    padding-bottom: 30px;
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+
+  .footer_nav {
+    padding-left: 15px;
+    gap: 6px 12px;
+  }
+
+  .footer_nav a {
+    font-size: 13px;
+  }
+
+  .footer_logo {
+    padding-right: 15px;
+  }
+
+  .footer_logo img {
+    width: 130px;
+  }
+
+  .footer_info p {
+    font-size: 11px;
+    line-height: 1.6;
+  }
+
+  .footer_right {
+    gap: 15px;
+  }
+
+  .footer_sns {
+    gap: 8px;
+  }
+
+  .footer_sns a {
+    width: 32px;
+    height: 32px;
+  }
+
+  .footer_sns a img {
+    width: 18px;
+    height: 18px;
+  }
+
+  .footer_family {
+    font-size: 11px;
+    padding: 9px 20px;
+  }
+
+  /* Top Button */
+  .top_btn {
+    width: 40px;
+    height: 40px;
+    bottom: 15px;
+    right: 15px;
+    font-size: 16px;
   }
 }
