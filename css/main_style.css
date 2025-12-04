@@ -464,19 +464,19 @@ nav {
 }
 
 .visual .slide1 {
-  background-image: url("../asset/img/banner1.png");
+  background: url("../asset/img/banner1.png") no-repeat center/cover;
 }
 
 .visual .slide2 {
-  background-image: url("../asset/img/banner2.png");
+  background: url("../asset/img/banner2.png") no-repeat center/cover;
 }
 
 .visual .slide3 {
-  background-image: url("../asset/img/banner3.png");
+  background: url("../asset/img/banner3.png") no-repeat center/cover;
 }
 
 .visual .slide4 {
-  background-image: url("../asset/img/banner4.png");
+  background: url("../asset/img/banner4.png") no-repeat center/cover;
 }
 
 /* 컨트롤 */
