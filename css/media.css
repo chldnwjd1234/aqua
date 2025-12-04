@@ -327,7 +327,7 @@
   }
 
   header h1 img {
-    width: 140px;
+    width: 150px;
   }
 
   /* 모바일 메뉴 */
@@ -343,9 +343,17 @@
   }
 
   .mobile_header h1 img {
-    width: 140px;
+    width: 150px;
   }
 
+  .mobile_utils {
+    gap: 11px;
+  }
+
+  .mobile_utils button {
+    width: 37px;
+    height: 37px;
+  }
   .mobile_gnb > li > a {
     font-size: 22px;
     padding: 26px 30px;
@@ -1093,7 +1101,17 @@
   }
 
   header h1 img {
-    width: 120px;
+    width: 130px;
+  }
+
+  .utils .search {
+    width: 37px;
+    height: 37px;
+  }
+
+  .ham {
+    width: 32px;
+    height: 32px;
   }
 
   /* 모바일 메뉴 */
@@ -1111,6 +1129,19 @@
 
   .mobile_header {
     padding: 10px 15px;
+  }
+
+  .mobile_header h1 img {
+    width: 130px;
+  }
+
+  .mobile_utils {
+    gap: 8px;
+  }
+
+  .mobile_utils button {
+    width: 32px;
+    height: 32px;
   }
 
   .mobile_title {
