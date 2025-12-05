@@ -1188,7 +1188,7 @@
   }
 
   .visual .txt p {
-    font-size: 14px;
+    font-size: 13px;
     margin-bottom: 20px;
     line-height: 1.4;
   }
@@ -1259,7 +1259,7 @@
     height: 100%;
     background-image: url(../asset/img/p_vec.svg);
     background-size: contain;
-    background-position: bottom;
+    background-position: bottom ;
   }
 
   .time .inner {
