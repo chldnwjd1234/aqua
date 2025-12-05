@@ -429,6 +429,13 @@
     padding: 60px 0;
   }
 
+  .time::after {
+    height: 100%;
+    background-image: url(../asset/img/pad_time.svg);
+    background-size: contain;
+    background-position: bottom;
+  }
+
   .time .inner {
     flex-direction: column;
     gap: 60px;
@@ -1256,10 +1263,7 @@
   }
 
   .time::after {
-    height: 100%;
     background-image: url(../asset/img/p_vec.svg);
-    background-size: contain;
-    background-position: bottom ;
   }
 
   .time .inner {
