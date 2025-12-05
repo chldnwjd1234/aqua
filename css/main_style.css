@@ -68,11 +68,11 @@ nav {
   align-items: center;
 }
 
-.gnb > li {
+.gnb>li {
   position: relative;
 }
 
-.gnb > li > a {
+.gnb>li>a {
   height: 95px;
   font-size: 23px;
   font-weight: 500;
@@ -83,7 +83,7 @@ nav {
   position: relative;
 }
 
-.gnb > li > a::after {
+.gnb>li>a::after {
   content: "";
   position: absolute;
   bottom: 30%;
@@ -94,16 +94,16 @@ nav {
   transition: width 0.3s;
 }
 
-.gnb > li:hover > a {
+.gnb>li:hover>a {
   color: var(--blue);
 }
 
-.gnb > li:hover > a::after {
+.gnb>li:hover>a::after {
   width: 100%;
 }
 
 /* 서브메뉴 - 기본 숨김 */
-.gnb > li > ul {
+.gnb>li>ul {
   position: absolute;
   top: 80px;
   left: 0;
@@ -114,22 +114,22 @@ nav {
   z-index: 1001;
 }
 
-.gnb > li > ul li {
+.gnb>li>ul li {
   margin-bottom: 26px;
 }
 
-.gnb > li > ul li:last-child {
+.gnb>li>ul li:last-child {
   margin-bottom: 0;
 }
 
-.gnb > li > ul li a {
+.gnb>li>ul li a {
   font-size: 19px;
   color: #666;
   transition: color 0.3s;
   white-space: nowrap;
 }
 
-.gnb > li > ul li a:hover {
+.gnb>li>ul li a:hover {
   color: var(--blue);
 }
 
@@ -245,7 +245,7 @@ nav {
 }
 
 /* 서브메뉴 보이기 */
-.gnb > li > ul.visible {
+.gnb>li>ul.visible {
   opacity: 1;
   visibility: visible;
 }
@@ -371,6 +371,7 @@ nav {
 .mobile_menu {
   display: none;
 }
+
 /* ========== VISUAL ========== */
 .visual {
   padding: 130px 0 40px 130px;
@@ -589,11 +590,12 @@ nav {
   align-items: center;
   justify-content: center;
   gap: 20px;
-  transition: background 0.3s;
+  transition: 0.3s;
 }
 
 .service_icons a:hover .icon {
   background: #c9e8f0;
+  transform: translateY(-2px);
 }
 
 .service_icons .icon span {
@@ -611,7 +613,8 @@ nav {
 
 .animal .inner {
   height: 100%;
-  max-width: 100%; /* ← 추가: inner의 max-width 제한 해제 */
+  max-width: 100%;
+  /* ← 추가: inner의 max-width 제한 해제 */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1102,11 +1105,9 @@ nav {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    90deg,
-    rgba(0, 0, 0, 0.4) 0%,
-    rgba(0, 0, 0, 0) 70%
-  );
+  background: linear-gradient(90deg,
+      rgba(0, 0, 0, 0.4) 0%,
+      rgba(0, 0, 0, 0) 70%);
   z-index: 1;
 }
 
@@ -1148,6 +1149,7 @@ nav {
   position: relative;
   overflow: hidden;
 }
+
 .news .inner {
   max-width: 1660px;
   margin: 0 auto;
