@@ -1135,10 +1135,17 @@
     width: 130px;
   }
 
-  .utils .search {
-    width: 37px;
-    height: 37px;
+  .utils .search{
+    width: 30px;
+    height: 30px;
   }
+
+  .utils .search img{
+    width: 24px;
+    height: 24px;
+  }
+
+  
 
   .ham {
     width: 32px;
@@ -1196,6 +1203,10 @@
   }
 
   /* 비주얼 */
+
+    .visual {
+    padding: 6% 0 0 0;
+  }
   .visual .swiper-slide {
     height: 280px;
   }
