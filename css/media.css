@@ -15,6 +15,7 @@
 
 /* ========== 1440px 이하 - 햄버거 메뉴 시작 ========== */
 @media (max-width: 1440px) {
+
   /* 헤더 */
   .inner {
     padding: 0 40px;
@@ -95,7 +96,7 @@
     z-index: 98;
   }
 
-  header.on ~ .mobile_overlay {
+  header.on~.mobile_overlay {
     opacity: 1;
     visibility: visible;
   }
@@ -132,7 +133,7 @@
     z-index: 0;
   }
 
-  header.on ~ .mobile_menu {
+  header.on~.mobile_menu {
     transform: translateX(0);
   }
 
@@ -212,13 +213,13 @@
     flex-direction: column;
   }
 
-  .mobile_gnb > li {
+  .mobile_gnb>li {
     border-bottom: 1px solid #e5e5e5;
     position: relative;
     cursor: pointer;
   }
 
-  .mobile_gnb > li > a {
+  .mobile_gnb>li>a {
     display: block;
     padding: 28px 90px 28px 40px;
     font-size: 26px;
@@ -253,7 +254,7 @@
     display: block;
   }
 
-  .mobile_gnb > li.open .toggle_btn::after {
+  .mobile_gnb>li.open .toggle_btn::after {
     transform: rotate(180deg);
   }
 
@@ -265,7 +266,7 @@
     background: #f8f8f8;
   }
 
-  .mobile_gnb > li.open .mobile_sub {
+  .mobile_gnb>li.open .mobile_sub {
     max-height: 600px;
     padding: 15px 0;
   }
@@ -310,6 +311,7 @@
 
 /* ========== 1024px 이하 ========== */
 @media (max-width: 1024px) {
+
   /* inner 전체 너비 사용 + 패딩 37px */
   .inner {
     max-width: 100%;
@@ -351,7 +353,7 @@
     height: 37px;
   }
 
-  .mobile_gnb > li > a {
+  .mobile_gnb>li>a {
     font-size: 22px;
     padding: 26px 30px;
   }
@@ -433,7 +435,7 @@
     height: 100%;
     background-image: url(../asset/img/pad_time.svg);
     background-size: contain;
-    background-position: bottom;
+    background-position: bottom ;
   }
 
   .time .inner {
@@ -1065,7 +1067,7 @@
     padding: 20px 15px;
   }
 
-  .mobile_gnb > li > a {
+  .mobile_gnb>li>a {
     font-size: 22px;
     padding: 24px 25px;
   }
@@ -1101,6 +1103,7 @@
 
 /* ========== 430px 이하 - 모바일 최적화 ========== */
 @media (max-width: 430px) {
+
   /* inner 패딩 조정 */
   .inner {
     padding: 0 15px;
@@ -1160,7 +1163,7 @@
     padding: 18px 15px;
   }
 
-  .mobile_gnb > li > a {
+  .mobile_gnb>li>a {
     font-size: 20px;
     padding: 22px 20px;
   }
@@ -1269,6 +1272,7 @@
   .time .inner {
     gap: 25px;
   }
+
   .time_info h2 {
     font-size: 20px;
   }
@@ -1520,6 +1524,7 @@
     object-fit: contain;
     padding: 0;
   }
+
   .prog::after {
     margin: 40px auto 0;
     padding: 12px 25px;
@@ -1694,6 +1699,17 @@
   .footer_family i {
     font-size: 12px;
     padding-left: 7px;
+  }
+
+  footer .select_box.on .family_list {
+    max-height: 300px;
+    bottom: calc(100% + 5px);
+  }
+
+  .family_list li a {
+    font-size: 13px;
+    height: 40px;
+    line-height: 40px;
   }
 
   /* Top Button */

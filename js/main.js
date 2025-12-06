@@ -300,6 +300,14 @@ const eventSwiper = new Swiper(".event_swiper", {
   watchSlidesProgress: true,
 });
 
+
+// 푸터 select box
+document.querySelectorAll('footer .select_box button').forEach(function (button) {
+  button.addEventListener('click', function () {
+    this.closest('.select_box').classList.toggle('on');
+  });
+});
+
 /* ========== Top Button ========== */
 const topBtn = document.querySelector(".top_btn");
 
