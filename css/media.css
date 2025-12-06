@@ -1203,9 +1203,8 @@
   }
 
   /* 비주얼 */
-
     .visual {
-    padding: 6% 0 0 0;
+    padding: 60px 0 0 0;
   }
   .visual .swiper-slide {
     height: 280px;
@@ -1257,7 +1256,7 @@
 
   /* 비주얼 하단 컨트롤 */
   .visual .btns {
-    gap: 7px;
+    gap: 5px;
     left: 15px;
     bottom: 15px;
   }
@@ -1276,7 +1275,7 @@
   }
 
   .visual .swiper-pagination {
-    font-size: 13px;
+    font-size: 14px;
   }
 
   .visual .btns .toggle {
@@ -1285,7 +1284,7 @@
   }
 
   .visual .btns .toggle i {
-    font-size: 11px;
+    font-size: 12px;
   }
 
   /* Time */
