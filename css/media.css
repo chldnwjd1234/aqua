@@ -467,10 +467,27 @@
   }
 
   .service_icons .icon img {
-    width: 50px;
-    height: 50px;
+    width: 53px;
+    height: 53px;
     object-fit: contain;
   }
+
+/* 2번째 아이콘만 크기 줄이기 */
+.service_icons a:nth-child(2) .icon img {
+  width: 43px; 
+  height: 43px;
+}
+
+.service_icons a:nth-child(4) .icon img {
+  width: 44px; 
+  height: 44px;
+}
+
+.service_icons a:nth-child(5) .icon img {
+  width: 43px; 
+  height: 43px;
+}
+
 
   .service_icons .icon span {
     font-size: 14px;
@@ -1293,9 +1310,26 @@
   }
 
   .service_icons .icon img {
-    width: 28px;
-    height: 28px;
+    width: 29px;
+    height: 29px;
   }
+
+  /* 2번째 아이콘만 크기 줄이기 */
+.service_icons a:nth-child(2) .icon img {
+  width: 25px; 
+  height: 25px;
+}
+
+.service_icons a:nth-child(4) .icon img {
+  width: 26px; 
+  height: 26px;
+}
+
+.service_icons a:nth-child(5) .icon img {
+  width: 25px; 
+  height: 25px;
+}
+
 
   .service_icons .icon span {
     font-size: 11px;
